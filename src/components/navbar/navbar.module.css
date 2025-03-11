@@ -1,0 +1,23 @@
+.navbarContainer {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-xxl) 0 var(--spacing-xxl);
+}
+
+.navbarContainer h1 {
+  font-weight: 500;
+}
+
+.linksContainer {
+  text-transform: capitalize;
+  display: flex;
+  gap: var(--spacing-xxl);
+  font-size: 18px;
+}
+
+.linksContainer li {
+  cursor: pointer;
+  color: var(--text-color);
+}

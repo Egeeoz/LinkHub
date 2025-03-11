@@ -1,0 +1,81 @@
+/* Import font families from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); /* Primary sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap'); /* Display/heading font */
+
+:root {
+  /* Core Brand Colors */
+  --primary-color: #3a86ff; /* Bright blue - Used for primary buttons, links, and important UI elements */
+  --primary-light: rgba(
+    58,
+    134,
+    255,
+    0.1
+  ); /* Transparent blue - Used for button hover states, badges, and highlight backgrounds */
+  --secondary-color: #2b2d42; /* Dark blue - Used for secondary buttons and accents */
+  --accent-color: #8338ec; /* Purple - Used for special highlights, accents, and gradient endpoints */
+
+  /* Text Colors */
+  --text-color: #2b2d42; /* Dark blue - Main body text color used throughout the site */
+  --text-light: #64748b; /* Medium gray - Used for secondary text, descriptions, dates, and footer text */
+
+  /* Background Colors */
+  --background-color: #ffffff; /* White - Main background color for the entire site */
+  --background-alt: #f8f9fa; /* Light gray - Used for alternating sections, footer background, and cards */
+
+  /* UI Element Colors */
+  --border-color: #e2e8f0; /* Light gray - Used for borders, dividers, and input fields */
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Subtle shadow - Applied to cards, modals, and dropdowns */
+
+  /* Animation & Transition */
+  --transition-standard: all 0.3s ease; /* Standard transition - Applied to interactive elements like buttons and cards */
+
+  /* Spacing Scale (used throughout the site for consistent spacing) */
+  --spacing-xs: 0.25rem; /* 4px - Used for minimal spacing between very close elements */
+  --spacing-sm: 0.5rem; /* 8px - Used for tight spacing between related elements */
+  --spacing-md: 1rem; /* 16px - Default spacing used for most elements */
+  --spacing-lg: 1.5rem; /* 24px - Used for more generous spacing between sections */
+  --spacing-xl: 2rem; /* 32px - Used for significant spacing between major sections */
+  --spacing-xxl: 3rem; /* 48px - Used for very large spacing, typically at top/bottom of pages */
+
+  /* Border Radius Scale */
+  --radius-sm: 0.25rem; /* 4px - Used for small elements like tags and badges */
+  --radius-md: 0.5rem; /* 8px - Used for buttons and input fields */
+  --radius-lg: 0.75rem; /* 12px - Used for cards, modals, and larger components */
+
+  --font-display: 'SF Pro Display', 'Inter', system-ui, sans-serif; /* Used as main font famioly through the page */
+}
+
+/**
+ * CSS Variables - Dark Theme
+ * These override the default light theme variables when the .dark class is applied to the body
+ * The .dark class is toggled by the theme switcher component
+ */
+.dark {
+  --primary-color: #60a5fa; /* Lighter blue - More visible against dark backgrounds */
+  --primary-light: rgba(
+    96,
+    165,
+    250,
+    0.1
+  ); /* Transparent light blue - Used for hover states in dark mode */
+  --secondary-color: #e2e8f0; /* Light gray - Secondary elements in dark mode */
+  --accent-color: #a78bfa; /* Lighter purple - More visible accents for dark mode */
+  --text-color: #e2e8f0; /* Light gray - Main text color for readability on dark backgrounds */
+  --text-light: #94a3b8; /* Medium-light gray - Secondary text for dark mode */
+  --background-color: #0f172a; /* Dark blue - Main background for dark mode */
+  --background-alt: #1e293b; /* Slightly lighter blue - Alt sections for dark mode */
+  --border-color: #334155; /* Medium-dark blue - Visible but subtle borders for dark mode */
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow - More visible in dark mode */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-display);
+}
+
+body {
+  background-color: var(--background-color);
+}
