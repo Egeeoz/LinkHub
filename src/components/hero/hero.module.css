@@ -7,6 +7,9 @@
   gap: var(--spacing-lg);
   text-transform: capitalize;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../images/bgImg.jpg');
 }
 
 .tagline {

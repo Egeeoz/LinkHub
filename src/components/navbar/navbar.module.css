@@ -17,7 +17,7 @@
   font-size: 18px;
 }
 
-.linksContainer li {
+.linksContainer li a {
   cursor: pointer;
   color: var(--text-color);
 }

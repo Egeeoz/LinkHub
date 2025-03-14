@@ -1,15 +1,26 @@
 import styles from './navbar.module.css';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <nav className={styles.navbarContainer}>
       <h1>LinkHub</h1>
       <ul className={styles.linksContainer}>
-        <li>home</li>
-        <li>browse</li>
-        <li>about</li>
-        <li>login</li>
-        <li>register</li>
+        <li>
+          <Link href="/">home</Link>
+        </li>
+        <li>
+          <Link href="/">browse</Link>
+        </li>
+        <li>
+          <Link href="/">about</Link>
+        </li>
+        <li>
+          <Link href="/">login</Link>
+        </li>
+        <li>
+          <Link href="/register">register</Link>
+        </li>
       </ul>
     </nav>
   );

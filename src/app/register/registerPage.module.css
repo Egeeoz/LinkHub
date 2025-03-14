@@ -1,0 +1,22 @@
+.registerContainer {
+  height: 77.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerInputs {
+  padding: var(--spacing-md);
+  border-radius: var(--spacing-lg);
+  background-color: var(--background-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerContainer input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
