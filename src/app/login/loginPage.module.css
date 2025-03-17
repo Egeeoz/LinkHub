@@ -1,4 +1,4 @@
-.registerContainer {
+.loginContainer {
   height: 77.5vh;
   display: flex;
   align-items: center;
@@ -7,16 +7,16 @@
   padding: 2rem;
 }
 
-.registerCard {
+.loginCard {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   padding: 2rem;
   border-radius: 12px;
   background-color: var(--background-alt);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.registerTitle {
+.loginTitle {
   color: var(--text-color);
   font-size: 1.8rem;
   font-weight: 600;
@@ -24,16 +24,16 @@
   text-align: center;
 }
 
-.registerSubtitle {
+.loginSubtitle {
   color: var(--text-secondary);
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.registerForm {
+.loginForm {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .inputGroup {
@@ -63,7 +63,19 @@
   box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
 }
 
-.registerButton {
+.forgotPassword {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: 0.25rem;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.loginButton {
   margin-top: 1rem;
   padding: 0.85rem;
   border: none;
@@ -76,23 +88,23 @@
   transition: background-color 0.2s;
 }
 
-.registerButton:hover {
+.loginButton:hover {
   background-color: var(--secondary-color);
 }
 
-.loginLink {
+.registerLink {
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
-.loginLink a {
+.registerLink a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
 }
 
-.loginLink a:hover {
+.registerLink a:hover {
   text-decoration: underline;
 }
