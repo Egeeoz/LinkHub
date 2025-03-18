@@ -1,8 +1,12 @@
 import { handleLogout } from '@/lib/util/util';
 import styles from './navbar.module.css';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
 
-const Navbar = () => {
+const Navbar = async () => {
+  const cookiesStore = await cookies();
+  const sessionCookie = cookiesStore.get('session')?.value;
+
   return (
     <nav className={styles.navbarContainer}>
       <h1>LinkHub</h1>
@@ -14,19 +18,16 @@ const Navbar = () => {
           <Link href="/">browse</Link>
         </li>
         <li>
-          <Link href="/">about</Link>
-        </li>
-        <li>
-          <Link href="/login  ">login</Link>
+          <Link href="/login">login</Link>
         </li>
         <li>
           <Link href="/register">register</Link>
         </li>
-        <li>
-          <Link href="/" onClick={handleLogout}>
-            Logout
-          </Link>
-        </li>
+        {sessionCookie && (
+          <li>
+            <a onClick={handleLogout}>Logout</a>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -66,6 +66,7 @@ export const handleLogout = async () => {
     await fetch('/api/auth/logout', {
       method: 'POST',
     });
+    window.location.assign('/');
   } catch (error) {
     return { success: false, message: 'Error logging user out' };
   }

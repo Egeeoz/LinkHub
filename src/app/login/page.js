@@ -19,7 +19,9 @@ const LoginPage = () => {
       const result = await handleLogin(email, password);
       if (result.success) {
         console.log(result);
-        router.push('/profile');
+        window.location.assign('/profile');
+        // router.push('/profile');
+        // setTimeout(() => window.location.reload(), 100);
       }
     } catch (error) {
       console.log('Error logging in', error);
