@@ -1,0 +1,85 @@
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: var(--spacing-xl);
+}
+
+.profileCard {
+  background-color: var(--background-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 560px;
+}
+
+.profileTitle {
+  color: var(--text-color);
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.profileDetails {
+  margin-bottom: var(--spacing-xl);
+}
+
+.profileItem {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profileItem:last-child {
+  border-bottom: none;
+}
+
+.profileItem h3 {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.profileItem p {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.profileActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-xl);
+}
+
+.editButton {
+  background-color: var(--primary-color);
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: var(--transition-standard);
+}
+
+.editButton:hover {
+  background-color: var(--secondary-color);
+}
+
+.backButton {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: var(--transition-standard);
+}
+
+.backButton:hover {
+  background-color: var(--background-alt);
+}

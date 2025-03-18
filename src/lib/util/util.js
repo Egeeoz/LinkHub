@@ -1,9 +1,10 @@
 'use client';
 import { auth, db } from '../firebase/client';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 
 export const handleRegister = async (
@@ -29,19 +30,43 @@ export const handleRegister = async (
 
 export const handleLogin = async (email, password) => {
   try {
-    const user = await signInWithEmailAndPassword(auth, email, password);
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const idToken = await userCredential.user.getIdToken();
 
-    const idToken = await user.user.getIdToken();
+    const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
+    const companyName = userDoc.exists() ? userDoc.data().companyName : '';
+    const organizationNumber = userDoc.exists()
+      ? userDoc.data().organizationNumber
+      : '';
 
     await fetch('/api/auth/login', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ token: idToken }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        token: idToken,
+        email: userCredential.user.email,
+        companyName,
+        organizationNumber,
+      }),
     });
-    return { success: true, user: user.user };
+    return { success: true, user: userCredential.user };
   } catch (error) {
     return { success: false, message: 'Error logging user in' };
+  }
+};
+
+export const handleLogout = async () => {
+  try {
+    await signOut(auth);
+
+    await fetch('/api/auth/logout', {
+      method: 'POST',
+    });
+  } catch (error) {
+    return { success: false, message: 'Error logging user out' };
   }
 };

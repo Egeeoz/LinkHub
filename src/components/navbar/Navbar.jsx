@@ -1,3 +1,4 @@
+import { handleLogout } from '@/lib/util/util';
 import styles from './navbar.module.css';
 import Link from 'next/link';
 
@@ -20,6 +21,11 @@ const Navbar = () => {
         </li>
         <li>
           <Link href="/register">register</Link>
+        </li>
+        <li>
+          <Link href="/" onClick={handleLogout}>
+            Logout
+          </Link>
         </li>
       </ul>
     </nav>
