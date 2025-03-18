@@ -1,0 +1,22 @@
+.aboutContainer {
+  background-color: var(--background-alt);
+  padding: var(--spacing-lg) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutContent {
+  font-size: 22px;
+  line-height: 1.25;
+  width: 60%;
+  text-align: center;
+}
+
+.aboutContent h1 {
+  font-weight: 600;
+  padding-bottom: var(--spacing-md);
+}
+
+.aboutText {
+  padding-bottom: var(--spacing-md);
+}

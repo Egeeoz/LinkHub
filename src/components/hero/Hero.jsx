@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './hero.module.css';
 
 const Hero = () => {
@@ -13,10 +14,9 @@ const Hero = () => {
         <span> grow</span> with an elegant <br /> platform designed for
         businesses
       </p>
-      <section className={styles.buttonContainer}>
-        <button className={styles.primaryButton}>get started</button>
-        <button className={styles.secondaryButton}>see how it works</button>
-      </section>
+      <Link href="/register" className={styles.primaryButton}>
+        get started
+      </Link>
     </section>
   );
 };

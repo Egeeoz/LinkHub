@@ -20,8 +20,6 @@ const LoginPage = () => {
       if (result.success) {
         console.log(result);
         window.location.assign('/profile');
-        // router.push('/profile');
-        // setTimeout(() => window.location.reload(), 100);
       }
     } catch (error) {
       console.log('Error logging in', error);

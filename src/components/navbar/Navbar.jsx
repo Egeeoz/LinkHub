@@ -17,16 +17,20 @@ const Navbar = async () => {
         <li>
           <Link href="/">browse</Link>
         </li>
-        <li>
-          <Link href="/login">login</Link>
-        </li>
-        <li>
-          <Link href="/register">register</Link>
-        </li>
-        {sessionCookie && (
+
+        {sessionCookie ? (
           <li>
             <a onClick={handleLogout}>Logout</a>
           </li>
+        ) : (
+          <>
+            <li>
+              <Link href="/login">login</Link>
+            </li>
+            <li>
+              <Link href="/register">register</Link>
+            </li>
+          </>
         )}
       </ul>
     </nav>
