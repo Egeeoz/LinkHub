@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import styles from './profilePage.module.css';
 import Link from 'next/link';
+import CompanyInfo from '@/components/companyInfo/CompanyInfo';
 
 export default async function ProfilePage() {
   const cookieStore = await cookies();
@@ -56,6 +57,8 @@ export default async function ProfilePage() {
           </Link>
         </div>
       </div>
+
+      <CompanyInfo />
     </section>
   );
 }

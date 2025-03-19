@@ -18,7 +18,7 @@ const About = () => {
           increase visibility and reach more customers. Our mission is to
           simplify business discovery and make it effortless for people to
           connect with the services they need. Join us today and let customers
-          find you!1
+          find you!
         </p>
       </section>
     </section>

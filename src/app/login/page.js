@@ -2,11 +2,9 @@
 import React, { useState } from 'react';
 import styles from './loginPage.module.css';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { handleLogin } from '@/lib/util/util';
 
 const LoginPage = () => {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',

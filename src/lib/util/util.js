@@ -71,3 +71,34 @@ export const handleLogout = async () => {
     return { success: false, message: 'Error logging user out' };
   }
 };
+
+export const handleAddCompanyInfo = async (formData) => {
+  try {
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      return { success: false, message: 'No user logged in' };
+    }
+
+    const userRef = doc(db, 'users', currentUser.uid);
+    const userDoc = await getDoc(userRef);
+
+    const userData = userDoc.data();
+
+    const updatedData = {};
+    if (formData.services) updatedData.services = formData.services;
+    if (formData.hourOpen) updatedData.hourOpen = formData.hourOpen;
+    if (formData.hourClose) updatedData.hourClose = formData.hourClose;
+    if (formData.address) updatedData.address = formData.address;
+
+    await setDoc(userRef, { ...userData, ...updatedData }, { merge: true });
+
+    return { success: true, message: 'Company info updated successfully' };
+  } catch (error) {
+    console.error(error);
+    return {
+      success: false,
+      message: error.message || 'Error updating company info',
+    };
+  }
+};
