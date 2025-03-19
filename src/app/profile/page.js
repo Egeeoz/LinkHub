@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 import styles from './profilePage.module.css';
 import Link from 'next/link';
 import CompanyInfo from '@/components/companyInfo/CompanyInfo';
+import ViewCompanyInfo from '@/components/companyInfo/ViewCompanyInfo';
 
 export default async function ProfilePage() {
   const cookieStore = await cookies();
@@ -18,8 +19,8 @@ export default async function ProfilePage() {
       const userData = JSON.parse(sessionCookie);
       profileData = {
         email: userData.email || 'Not available',
-        companyName: userData.companyName || 'Not available',
-        organizationNumber: userData.organizationNumber || 'Not available',
+        companyName: userData.data.companyName || 'Not available',
+        organizationNumber: userData.data.organizationNumber || 'Not available',
       };
     } catch (error) {
       console.error('Error parsing session cookie:', error);
@@ -57,8 +58,8 @@ export default async function ProfilePage() {
           </Link>
         </div>
       </div>
-
       <CompanyInfo />
+      <ViewCompanyInfo />
     </section>
   );
 }

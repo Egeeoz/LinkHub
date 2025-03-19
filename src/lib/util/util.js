@@ -38,10 +38,8 @@ export const handleLogin = async (email, password) => {
     const idToken = await userCredential.user.getIdToken();
 
     const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
-    const companyName = userDoc.exists() ? userDoc.data().companyName : '';
-    const organizationNumber = userDoc.exists()
-      ? userDoc.data().organizationNumber
-      : '';
+    // const companyName = userDoc.data().companyName;
+    // const organizationNumber = userDoc.data().organizationNumber;
 
     await fetch('/api/auth/login', {
       method: 'POST',
@@ -49,8 +47,7 @@ export const handleLogin = async (email, password) => {
       body: JSON.stringify({
         token: idToken,
         email: userCredential.user.email,
-        companyName,
-        organizationNumber,
+        data: userDoc.data(),
       }),
     });
     return { success: true, user: userCredential.user };
