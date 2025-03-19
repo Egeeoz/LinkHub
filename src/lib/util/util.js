@@ -1,6 +1,6 @@
 'use client';
 import { auth, db } from '../firebase/client';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc, collection, getDocs } from 'firebase/firestore';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -17,8 +17,14 @@ export const handleRegister = async (
     const newUser = await createUserWithEmailAndPassword(auth, email, password);
     await setDoc(doc(db, 'users', newUser.user.uid), {
       email: email,
-      companyName,
       organizationNumber,
+      companyInfo: {
+        companyName,
+        services: '',
+        hourOpen: '',
+        hourClose: '',
+        address: '',
+      },
     });
 
     return { success: true, user: newUser.user };
@@ -47,15 +53,14 @@ export const handleLogin = async (email, password) => {
 export const attachUserDataToSession = async (userCredential) => {
   const idToken = await userCredential.user.getIdToken();
   const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
-  const userData = userDoc.data();
-
+  const data = userDoc.data();
   await fetch('/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       token: idToken,
       email: userCredential.user.email,
-      data: userData,
+      data,
     }),
   });
   window.location.reload();
@@ -84,16 +89,18 @@ export const handleAddCompanyInfo = async (formData) => {
 
     const userRef = doc(db, 'users', currentUser.uid);
     const userDoc = await getDoc(userRef);
-
     const userData = userDoc.data();
 
-    const updatedData = {};
-    if (formData.services) updatedData.services = formData.services;
-    if (formData.hourOpen) updatedData.hourOpen = formData.hourOpen;
-    if (formData.hourClose) updatedData.hourClose = formData.hourClose;
-    if (formData.address) updatedData.address = formData.address;
+    const updatedCompanyInfo = {
+      ...userData.companyInfo,
+      ...formData,
+    };
 
-    await setDoc(userRef, { ...userData, ...updatedData }, { merge: true });
+    await setDoc(
+      userRef,
+      { ...userData, companyInfo: updatedCompanyInfo },
+      { merge: true }
+    );
 
     await attachUserDataToSession({ user: currentUser });
 

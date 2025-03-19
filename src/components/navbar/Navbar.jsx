@@ -15,7 +15,7 @@ const Navbar = async () => {
           <Link href="/">home</Link>
         </li>
         <li>
-          <Link href="/">browse</Link>
+          <Link href="/browse">browse</Link>
         </li>
 
         {sessionCookie ? (

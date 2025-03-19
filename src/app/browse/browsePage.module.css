@@ -1,0 +1,13 @@
+.browseContainer {
+  height: 70vh;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-alt);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}

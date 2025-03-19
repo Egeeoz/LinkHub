@@ -19,7 +19,7 @@ export default async function ProfilePage() {
       const userData = JSON.parse(sessionCookie);
       profileData = {
         email: userData.email || 'Not available',
-        companyName: userData.data.companyName || 'Not available',
+        companyName: userData.data.companyInfo.companyName || 'Not available',
         organizationNumber: userData.data.organizationNumber || 'Not available',
       };
     } catch (error) {
