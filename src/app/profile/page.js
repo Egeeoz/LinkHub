@@ -50,15 +50,12 @@ export default async function ProfilePage() {
         </div>
 
         <div className={styles.profileActions}>
-          <Link href="/edit-profile" className={styles.editButton}>
-            Edit Profile
-          </Link>
           <Link href="/" className={styles.backButton}>
             Back to Home
           </Link>
+          <CompanyInfo />
         </div>
       </div>
-      <CompanyInfo />
       <ViewCompanyInfo />
     </section>
   );

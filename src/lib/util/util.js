@@ -35,25 +35,30 @@ export const handleLogin = async (email, password) => {
       email,
       password
     );
-    const idToken = await userCredential.user.getIdToken();
 
-    const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
-    // const companyName = userDoc.data().companyName;
-    // const organizationNumber = userDoc.data().organizationNumber;
+    await attachUserDataToSession(userCredential);
 
-    await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        token: idToken,
-        email: userCredential.user.email,
-        data: userDoc.data(),
-      }),
-    });
     return { success: true, user: userCredential.user };
   } catch (error) {
     return { success: false, message: 'Error logging user in' };
   }
+};
+
+export const attachUserDataToSession = async (userCredential) => {
+  const idToken = await userCredential.user.getIdToken();
+  const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
+  const userData = userDoc.data();
+
+  await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      token: idToken,
+      email: userCredential.user.email,
+      data: userData,
+    }),
+  });
+  window.location.reload();
 };
 
 export const handleLogout = async () => {
@@ -90,12 +95,14 @@ export const handleAddCompanyInfo = async (formData) => {
 
     await setDoc(userRef, { ...userData, ...updatedData }, { merge: true });
 
+    await attachUserDataToSession({ user: currentUser });
+
     return { success: true, message: 'Company info updated successfully' };
   } catch (error) {
     console.error(error);
     return {
       success: false,
-      message: error.message || 'Error updating company info',
+      message: 'Error updating company info',
     };
   }
 };

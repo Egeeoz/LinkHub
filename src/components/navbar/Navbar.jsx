@@ -19,9 +19,14 @@ const Navbar = async () => {
         </li>
 
         {sessionCookie ? (
-          <li>
-            <a onClick={handleLogout}>Logout</a>
-          </li>
+          <>
+            <li>
+              <a onClick={handleLogout}>Logout</a>
+            </li>
+            <li>
+              <Link href="/profile">Profile</Link>
+            </li>
+          </>
         ) : (
           <>
             <li>
