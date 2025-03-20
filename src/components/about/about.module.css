@@ -1,9 +1,4 @@
 .aboutContainer {
-  background: linear-gradient(
-    135deg,
-    var(--background-alt),
-    var(--primary-light)
-  );
   padding: var(--spacing-lg) 0;
   display: flex;
   justify-content: center;
@@ -14,9 +9,9 @@
 .aboutContent {
   max-width: 800px;
   width: 90%;
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: var(--spacing-lg);
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
 }

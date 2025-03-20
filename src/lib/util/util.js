@@ -91,9 +91,16 @@ export const handleAddCompanyInfo = async (formData) => {
     const userDoc = await getDoc(userRef);
     const userData = userDoc.data();
 
+    const fieldsToUpdate = {};
+    Object.keys(formData).forEach((key) => {
+      if (formData[key] !== '') {
+        fieldsToUpdate[key] = formData[key];
+      }
+    });
+
     const updatedCompanyInfo = {
       ...userData.companyInfo,
-      ...formData,
+      ...fieldsToUpdate,
     };
 
     await setDoc(

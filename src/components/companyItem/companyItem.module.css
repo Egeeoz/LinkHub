@@ -6,10 +6,10 @@
 
 .companyBox {
   width: 20%;
-  background: #fff;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: var(--background-color);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
@@ -24,6 +24,6 @@
 }
 
 .companyBox p {
-  margin: 0.5rem 0;
+  margin: var(--spacing-sm) 0;
   color: var(--text-color);
 }
