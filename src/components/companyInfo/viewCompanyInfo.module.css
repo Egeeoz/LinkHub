@@ -1,0 +1,19 @@
+.viewCompanyInfoContainer {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: var(--spacing-md);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.viewCompanyInfoContainer p {
+  margin: var(--spacing-sm) 0;
+  font-size: 1rem;
+}
+
+.infoContainer h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}

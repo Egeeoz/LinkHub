@@ -45,27 +45,8 @@
   --font-display: 'SF Pro Display', 'Inter', system-ui, sans-serif; /* Used as main font famioly through the page */
 }
 
-/**
- * CSS Variables - Dark Theme
- * These override the default light theme variables when the .dark class is applied to the body
- * The .dark class is toggled by the theme switcher component
- */
-.dark {
-  --primary-color: #60a5fa; /* Lighter blue - More visible against dark backgrounds */
-  --primary-light: rgba(
-    96,
-    165,
-    250,
-    0.1
-  ); /* Transparent light blue - Used for hover states in dark mode */
-  --secondary-color: #e2e8f0; /* Light gray - Secondary elements in dark mode */
-  --accent-color: #a78bfa; /* Lighter purple - More visible accents for dark mode */
-  --text-color: #e2e8f0; /* Light gray - Main text color for readability on dark backgrounds */
-  --text-light: #94a3b8; /* Medium-light gray - Secondary text for dark mode */
-  --background-color: #0f172a; /* Dark blue - Main background for dark mode */
-  --background-alt: #1e293b; /* Slightly lighter blue - Alt sections for dark mode */
-  --border-color: #334155; /* Medium-dark blue - Visible but subtle borders for dark mode */
-  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow - More visible in dark mode */
+nextjs-portal {
+  display: none;
 }
 
 * {

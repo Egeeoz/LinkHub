@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.companyBox {
+  width: 20%;
+  background: var(--background-color);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.companyBox:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.companyBox h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.companyBox p {
+  margin: var(--spacing-sm) 0;
+  color: var(--text-color);
+}

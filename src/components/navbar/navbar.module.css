@@ -1,9 +1,13 @@
 .navbarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--spacing-xxl) 0 var(--spacing-xxl);
+  background-color: var(--background-color);
 }
 
 .navbarContainer h1 {
@@ -17,7 +21,17 @@
   font-size: 18px;
 }
 
-.linksContainer li {
+.linksContainer li a {
   cursor: pointer;
   color: var(--text-color);
+  transition: var(--transition-standard);
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+}
+
+.linksContainer li a:hover {
+  color: var(--primary-color);
+  background-size: 100% 2px;
 }

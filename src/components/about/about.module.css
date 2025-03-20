@@ -1,0 +1,33 @@
+.aboutContainer {
+  padding: var(--spacing-lg) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.aboutContent {
+  max-width: 800px;
+  width: 90%;
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.aboutContent h1 {
+  font-weight: 600;
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 26px;
+}
+
+.aboutText {
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
