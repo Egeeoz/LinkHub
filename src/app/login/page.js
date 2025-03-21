@@ -69,7 +69,7 @@ const LoginPage = () => {
         </form>
 
         <p className={styles.registerLink}>
-          Don't have an account? <Link href="/register">Register</Link>
+          Do not have an account? <Link href="/register">Register</Link>
         </p>
       </div>
     </section>
