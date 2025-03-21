@@ -7,7 +7,7 @@ export default async function BrowsePage() {
   return (
     <section className={styles.browseContainer}>
       <h1 className={styles.title}>Browse Companies</h1>
-      <div className={styles.grid}>
+      <div className={styles.companyItemContainer}>
         {companies.map((company, index) => (
           <CompanyItem key={index} company={company} />
         ))}

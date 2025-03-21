@@ -9,6 +9,7 @@ const AddCompanyInfoModal = ({ onClose }) => {
     hourOpen: '',
     hourClose: '',
     address: '',
+    phoneNumber: '',
   });
 
   const handleChange = (e) => {
@@ -72,6 +73,16 @@ const AddCompanyInfoModal = ({ onClose }) => {
               id="address"
               className={styles.input}
               value={formData.address}
+              onChange={handleChange}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Phone Number</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              className={styles.input}
+              value={formData.phoneNumber}
               onChange={handleChange}
             />
           </div>

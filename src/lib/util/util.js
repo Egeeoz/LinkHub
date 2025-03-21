@@ -24,6 +24,7 @@ export const handleRegister = async (
         hourOpen: '',
         hourClose: '',
         address: '',
+        phoneNumber: '',
       },
     });
 

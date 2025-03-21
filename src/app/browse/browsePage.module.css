@@ -11,3 +11,9 @@
   font-size: 2rem;
   color: var(--primary-color);
 }
+
+.companyItemContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

@@ -2,7 +2,14 @@ import styles from './companyItem.module.css';
 
 const CompanyItem = ({ company }) => {
   const {
-    companyInfo: { companyName, services, hourOpen, hourClose, address } = {},
+    companyInfo: {
+      companyName,
+      services,
+      hourOpen,
+      hourClose,
+      address,
+      phoneNumber,
+    } = {},
   } = company;
 
   return (
@@ -16,6 +23,9 @@ const CompanyItem = ({ company }) => {
       </p>
       <p>
         <strong>Hours:</strong> {hourOpen} - {hourClose}
+      </p>
+      <p>
+        <strong>Phone Number:</strong> {phoneNumber}
       </p>
     </div>
   );
