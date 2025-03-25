@@ -42,7 +42,7 @@ const LoginPage = () => {
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              type="text"
+              type="email"
               placeholder="your@email.com"
               value={formData.email}
               onChange={handleChange}
