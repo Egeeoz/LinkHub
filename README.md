@@ -1,1 +1,1 @@
-https://linkhub-7b030.web.app/
+https://link-hub-5sq8-git-main-egeozakdemir-weknowitses-projects.vercel.app/
