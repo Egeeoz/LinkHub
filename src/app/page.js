@@ -1,5 +1,5 @@
-import Hero from '@/components/hero/Hero';
-import About from '@/components/about/about';
+import Hero from '../components/hero/Hero';
+import About from '../components/about/about';
 
 export default function Home() {
   return (

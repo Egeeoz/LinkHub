@@ -52,7 +52,7 @@ const RegisterPage = () => {
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              type="email"
+              type="text"
               placeholder="your@email.com"
               value={formData.email}
               onChange={handleChange}
